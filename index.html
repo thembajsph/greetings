@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greetings</title>
+    <link rel="stylesheet" href="./css/greet.css">
+    <link rel="stylesheet" href="./css/simple-grid.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row center">
+            <h1>greetings</h1>
+        </div>
+
+        <div class="row col-3 center">
+
+            <label for="">Name</label>
+            <input type="text" name="" value="" placeholder="enter your name..." class="enterName">
+        </div>
+    </div>
+    </div>
+
+    <div class="radiobuttonrow col-3 center ">
+        
+            <span>
+                <label for="">Isixhosa</label>
+                <input type="radio" name="language" class="selectRadio" value="Isixhosa">
+            </span>
+            <span>
+                <label for="">English</label>
+                <input type="radio" name="language" class="selectRadio" value="English">
+            </span>
+            <span>
+                <label for="">Afrikaans</label>
+                <input type="radio" name="language" class="selectRadio" value="Afrikaans">
+            </span>     
+            <span>
+                <!--label for="">counter</label-->
+                <p class="counter center " value="1" ></p>
+            </span>     
+        
+    </div>
+
+
+    <div class="greetingsBtn row col-3 center ">
+        
+            <button class="greetMeBtn" type="button" name="button">Greet me!</button>
+
+    </div>
+
+    <div class="message row col-3 center ">
+        <param class="message"></p>
+    </div>
+
+    </div>
+</body>
+<script src="./factory/greetingsFactory.js" charset="UTF-8"></script>
+<script src="./dom/greetingDom.js" charset="UTF-8"></script>
+
+
+</html>

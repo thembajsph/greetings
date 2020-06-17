@@ -1,0 +1,74 @@
+body {
+    /* you can use a more complete font-family from VSCode as well */
+    font-family: arial;
+    background-color: aquamarine;
+
+}
+
+.row {
+   /* background-color: bisque;*/
+    padding: 0.50em;
+   /* display: flex;*/
+}
+
+/*.displayEndMessage {
+     ;
+}
+
+/*.clearfix {
+    overflow: auto;
+    zoom: 1;
+}
+/.footer {
+    background-color: aquamarine;
+    padding: 1em;
+}
+
+.clearfix {
+    overflow: auto;
+    zoom: 1;
+
+}*/
+
+
+
+
+
+/*@media(min-width:800px) {
+    .side-bar {
+        float: left;
+        width: 25%;
+        padding: 1em;
+    }
+
+    .paragraph {
+        display: flex;
+    }
+    .contentText {
+    float: left;
+    width: 30%;
+}
+table,
+tr,
+th,
+td {
+    border: 1px solid #333;
+    border-collapse: collapse;
+    width: 60000;
+}
+
+.main head line {
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.spacing {
+    padding: 25px;
+}
