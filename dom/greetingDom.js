@@ -13,21 +13,34 @@ function greetMe() {
 
 // get the name of text value
 var name = textElem.value;
+
+
 //alert(name);
 //getting values for  input checkbox
 var langValue = document.querySelector(".selectRadio:checked");
-//alert(langValue.value);
+if (langValue === null && name === "") {
+    textAreaElem.innerHTML = "please do enter a name and select a language"
+}
+else if ( name === "") {
+    textAreaElem.innerHTML =   "please enter name..."
+  }
 
-//  set/use the name, factory access
-instance.setName(name);
-var lingoInstance = instance.language(langValue.value, name);
-//alert(instance.language(langValue.value, name));
-
-counterFun();
-textAreaElem.innerHTML = lingoInstance
-
-//local storage store  , what it should stringify 
-localStorage.setName("names", JSON.stringify(lineDataHolder));
+  else if (langValue === null) {
+     textAreaElem.innerHTML = "please selected atleast one language"
+  }
+ 
+else if(!langValue === null) {
+    //  set/use the name, factory access
+    instance.setName(name);
+    var lingoInstance = instance.language(langValue.value, name);
+    //alert(instance.language(langValue.value, name));
+    
+    counterFun();
+    textAreaElem.innerHTML = lingoInstance
+    
+    //local storage store  , what it should stringify 
+    localStorage.setItem("names", JSON.stringify(lineDataHolder));
+    }
 
 
 
