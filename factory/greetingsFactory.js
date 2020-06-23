@@ -37,7 +37,10 @@ function greet(strings) {
     return Object.keys(greetedNames).length;
 
   }
-
+  function hasNumbers(name)
+  {
+  ;
+  }    
 
   
 return {
@@ -45,6 +48,6 @@ return {
   getName,
   language,
   counter,
-
+hasNumbers
 }
     }
