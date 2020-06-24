@@ -20,7 +20,7 @@ function greetMe() {
 
     var numbBack = instance.hasNumbers(name)
     var regex = /\d/g;
-    var regex2 = /[!@#$%^&*(),.;'"?":{}|<>]/g;
+    var regex2 = /[!@#$%^&*(),.;-_'"?":{}|<>]/g;
     if (!stringValue.match(regex) && !stringValue.match(regex2)) {
 
 
@@ -87,9 +87,11 @@ function counClearo() {
     var buttonpressed = false;
 
 
-    if (!buttonpressed && localStorage.length > 0) { // Check if the localStorage object exists
+    if (!buttonpressed && localStorage.length > 0 ) { // Check if the localStorage object exists
 
         window.localStorage.clear()  //clears the localstorage
+        instance.clear();
+        location.reload();
     }
 
 

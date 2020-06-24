@@ -39,11 +39,15 @@ function greet(strings) {
   }
   function hasNumbers(name)
   {
-  ;
-  }    
+
+  } ;
+  function clear()   {
+    greetedNames = []
+  }
 
   
 return {
+  clear,
   setName,
   getName,
   language,
