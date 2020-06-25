@@ -1,4 +1,5 @@
 const textElem = document.querySelector(".enterName");
+//const clearTextElem = document.querySelector(".textClear");
 const btnElem = document.querySelector(".greetMeBtn");
 const clearElem = document.querySelector(".counterClear");
 const textAreaElem = document.querySelector(".message");
@@ -11,6 +12,7 @@ var lineDataHolder = data;
 var instance = greet(data);
 counterFun();
 counClearo();
+clearTexo();
 //call function
 function greetMe() {
 
@@ -21,6 +23,7 @@ function greetMe() {
     var numbBack = instance.hasNumbers(name)
     var regex = /\d/g;
     var regex2 = /[!@#$%^&*(),.;-_'"?":{}|<>]/g;
+    textAreaElem.classList.remove("red") 
     if (!stringValue.match(regex) && !stringValue.match(regex2)) {
 
 
@@ -30,14 +33,17 @@ function greetMe() {
 
 
         if (langValue === null && name === "") {
-            textAreaElem.innerHTML = "please do enter a name and select a language"
+            textAreaElem.innerHTML = "please, do enter a name and select a language!"
+            textAreaElem.classList.add("red")
         }
         else if (name === "") {
-            textAreaElem.innerHTML = "please enter name..."
+            textAreaElem.innerHTML = "please, a enter name...!"
+            textAreaElem.classList.add("red")
         }
 
         else if (langValue === null) {
-            textAreaElem.innerHTML = "please selected atleast one language"
+            textAreaElem.innerHTML = "please, selected atleast one language!"
+            textAreaElem.classList.add("red")
         }
         else if (!(langValue === null && name === "")) {
             //  set/use the name, factory access
@@ -73,6 +79,7 @@ function greetMe() {
     }
     else {
         textAreaElem.innerHTML = "please enter a valid name...!"
+        textAreaElem.classList.add("red")
     }
 }
 function counterFun() {
@@ -92,22 +99,29 @@ function counClearo() {
         window.localStorage.clear()  //clears the localstorage
         instance.clear();
         location.reload();
+
     }
 
 
-    // else {
-
-    // alert("Sorry, no local storage."); //an alert if localstorage is non-existing
-    //}
-
-
-    counterElem.innerHTML = a;
-
+    
 }
+function clearTexo() {
+   // instance.getName()
+      //  var buttonpressed = false;
+    
+    
+       // if (!buttonpressed && !name === "" ) { // Check if the localStorage object exists
+            document.getElementById("textfield2").value = "";
+          //  window.localStorage.clear()  //clears the localstorage
+           // instance.clear();
+    
+    }
+    
 
 
 btnElem.addEventListener("click", greetMe);
 clearElem.addEventListener("click", counClearo);
+//clearTextElem.addEventListener("click", clearTexo);
 
 
 

@@ -11,6 +11,21 @@ body {
    /* display: flex;*/
 }
 
+.red {
+    color:red;
+}
+.counterClear {
+    background-color: #f44336;
+} /* Red */
+
+.textClear {
+    background-color: #4CAF50;
+} /* Green */
+
+.greetMeBtn {
+    background-color: #008CBA;
+} /* Blue */
+
 /*.displayEndMessage {
      ;
 }
