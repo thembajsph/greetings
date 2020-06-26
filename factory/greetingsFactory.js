@@ -46,12 +46,14 @@ function greet(strings) {
   }
 
   
+  
 return {
   clear,
   setName,
   getName,
   language,
   counter,
-hasNumbers
+hasNumbers,
+setTimer
 }
     }

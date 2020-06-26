@@ -13,16 +13,19 @@ var instance = greet(data);
 counterFun();
 counClearo();
 clearTexo();
+setTimer();
+
 //call function
 function greetMe() {
 
     // get the name of text value
     var stringValue = textElem.value;
     var name = stringValue.charAt(0).toUpperCase() + stringValue.slice(1).toLowerCase();
-
+  //  alert(name);
+    //string.charAt(0).toUpperCase() + string.slice(1)
     var numbBack = instance.hasNumbers(name)
     var regex = /\d/g;
-    var regex2 = /[!@#$%^&*(),.;-_'"?":{}|<>]/g;
+    var regex2 = /[!@#$%^&*(),.;-_'"?":{}|<>]-[ A-Za-z]/g;
     textAreaElem.classList.remove("red") 
     if (!stringValue.match(regex) && !stringValue.match(regex2)) {
 
@@ -116,6 +119,32 @@ function clearTexo() {
            // instance.clear();
     
     }
+    function setTimer() {
+       // function setToRed ( )
+      //  {
+          document.getElementById("alarmmsg").innerHTML = "";
+          setTimeout ( "setTimer()", 2000 );
+        }
+       // function setToBlack ( )
+       // {
+       //   document.getElementById("alarmmsg").innerHTML = "#000000";
+       // } 
+        
+        
+        
+        
+        
+        
+        
+        //setTimeout(function () {
+       //   document.getElementById("alarmmsg").innerHTML = "";
+    // }, 3000);
+      
+      // Now remove alarmmsg's content.
+     // document.getElementById("alarmmsg").innerHTML = ""; 
+    
+      //}
+    
     
 
 
