@@ -42,7 +42,7 @@ function greet(strings) {
 
   } ;
   function clear()   {
-    greetedNames = []
+   greetedNames = []; 
   }
 
   

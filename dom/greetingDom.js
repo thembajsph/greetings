@@ -6,12 +6,15 @@ const textAreaElem = document.querySelector(".message");
 const counterElem = document.querySelector(".counter");
 
 // if theres something it will put on local storage or return an array
-var data = localStorage.getItem("names") ? JSON.parse(localStorage.getItem("names")) : [];
-var lineDataHolder = data;
+var data = localStorage.getItem("names") ? JSON.parse(localStorage.getItem("names")): [];
 
+
+var lineDataHolder = data;
+//alert(lineDataHolder);
 var instance = greet(data);
 counterFun();
-counClearo();
+//counClearo();
+
 clearTexo();
 setTimer();
 
@@ -63,20 +66,7 @@ function greetMe() {
 
 
 
-        //langValue(html) value attributes
-        /*if (langValue === 'Isixhosa') {
-            textAreaElem.innerHTML = instance.language(langValue.value, name)
-        
-        }
-        
-        else if (langValue === 'English') {
-            textAreaElem.innerHTML = instance.language(langValue.value, name)
-        }
-        else if (langValue === 'Afrikaans') {
-            textAreaElem.innerHTML = instance.language(langValue.value, name)
-        
-        
-        }*/
+
 
 
     }
@@ -92,20 +82,19 @@ function counterFun() {
 function counClearo() {
     instance.counter();
 
-    var a = 0;
+   var a = 0;
 
     var buttonpressed = false;
 
 
-    if (!buttonpressed && localStorage.length > 0 ) { // Check if the localStorage object exists
+    if (!buttonpressed && localStorage ) { // Check if the localStorage object exists
 
-        window.localStorage.clear()  //clears the localstorage
+       window.localStorage.clear()  //clears the localstorage
         instance.clear();
-        location.reload();
+       location.reload();
 
     }
-
-
+    
     
 }
 function clearTexo() {
@@ -123,7 +112,7 @@ function clearTexo() {
        // function setToRed ( )
       //  {
           document.getElementById("alarmmsg").innerHTML = "";
-          setTimeout ( "setTimer()", 2000 );
+          setTimeout ( "setTimer()", 10000 );
         }
        // function setToBlack ( )
        // {
