@@ -54,6 +54,6 @@ return {
   language,
   counter,
 hasNumbers,
-setTimer
+
 }
     }

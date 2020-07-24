@@ -6,11 +6,10 @@ const textAreaElem = document.querySelector(".message");
 const counterElem = document.querySelector(".counter");
 
 // if theres something it will put on local storage or return an array
-var data = localStorage.getItem("names") ? JSON.parse(localStorage.getItem("names")): [];
-
+var data = localStorage.getItem("names") ? JSON.parse(localStorage.getItem("names")) : [];
 
 var lineDataHolder = data;
-//alert(lineDataHolder);
+
 var instance = greet(data);
 counterFun();
 //counClearo();
@@ -24,19 +23,15 @@ function greetMe() {
     // get the name of text value
     var stringValue = textElem.value;
     var name = stringValue.charAt(0).toUpperCase() + stringValue.slice(1).toLowerCase();
-  //  alert(name);
-    //string.charAt(0).toUpperCase() + string.slice(1)
     var numbBack = instance.hasNumbers(name)
     var regex = /\d/g;
     var regex2 = /[!@#$%^&*(),.;-_'"?":{}|<>]-[ A-Za-z]/g;
-    textAreaElem.classList.remove("red") 
+    textAreaElem.classList.remove("red")
+
     if (!stringValue.match(regex) && !stringValue.match(regex2)) {
 
-
-        //alert(name);
         //getting values for  input checkbox
         var langValue = document.querySelector(".selectRadio:checked");
-
 
         if (langValue === null && name === "") {
             textAreaElem.innerHTML = "please, do enter a name and select a language!"
@@ -63,12 +58,6 @@ function greetMe() {
             //local storage store  , what it should stringify 
             localStorage.setItem("names", JSON.stringify(lineDataHolder));
         }
-
-
-
-
-
-
     }
     else {
         textAreaElem.innerHTML = "please enter a valid name...!"
@@ -82,68 +71,51 @@ function counterFun() {
 function counClearo() {
     instance.counter();
 
-   var a = 0;
+    var a = 0;
 
     var buttonpressed = false;
 
+    if (!buttonpressed && localStorage) { // Check if the localStorage object exists
 
-    if (!buttonpressed && localStorage ) { // Check if the localStorage object exists
-
-       window.localStorage.clear()  //clears the localstorage
+        window.localStorage.clear()  //clears the localstorage
         instance.clear();
-       location.reload();
+        location.reload();
 
     }
-    
-    
+
 }
 function clearTexo() {
-   // instance.getName()
-      //  var buttonpressed = false;
-    
-    
-       // if (!buttonpressed && !name === "" ) { // Check if the localStorage object exists
-            document.getElementById("textfield2").value = "";
-          //  window.localStorage.clear()  //clears the localstorage
-           // instance.clear();
-    
-    }
-    function setTimer() {
-       // function setToRed ( )
-      //  {
-          document.getElementById("alarmmsg").innerHTML = "";
-          setTimeout ( "setTimer()", 10000 );
-        }
-       // function setToBlack ( )
-       // {
-       //   document.getElementById("alarmmsg").innerHTML = "#000000";
-       // } 
-        
-        
-        
-        
-        
-        
-        
-        //setTimeout(function () {
-       //   document.getElementById("alarmmsg").innerHTML = "";
-    // }, 3000);
-      
-      // Now remove alarmmsg's content.
-     // document.getElementById("alarmmsg").innerHTML = ""; 
-    
-      //}
-    
-    
 
+    document.getElementById("textfield2").value = "";
+
+
+}
+function setTimer() {
+
+    document.getElementById("alarmmsg").innerHTML = "";
+    setTimeout("setTimer()", 10000);
+}
 
 btnElem.addEventListener("click", greetMe);
 clearElem.addEventListener("click", counClearo);
 //clearTextElem.addEventListener("click", clearTexo);
 
 
+//#XTRA NOTES
 
+// function setToBlack ( )
+// {
+//   document.getElementById("alarmmsg").innerHTML = "#000000";
+// } 
 
+//setTimeout(function () {
+//   document.getElementById("alarmmsg").innerHTML = "";
+// }, 3000);
+
+// Now remove alarmmsg's content.
+// document.getElementById("alarmmsg").innerHTML = ""; 
+
+//}
 
 
 
